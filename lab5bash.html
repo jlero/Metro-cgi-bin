@@ -1,0 +1,52 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+<HTML>
+<HEAD></HEAD>
+<BODY>
+<div id="container" style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+<script>
+$(function () {
+    $('#container').highcharts({
+        title: {
+            text: 'Daily sum',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: ADBK',
+            x: -20
+        },
+        xAxis: {
+            categories: ['05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15', '16', '17', '18', 
+'19', '20', '21', '22', '23', '00', '01', '02', '03']
+        },
+        yAxis: {
+            title: {
+                text: 'SUM(Amount/100)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'UAH'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '"Polytechnik Institute" Station',
+            data: [7366,59452,264215,580552,392116,283415,238885,257529,292488,292496,319682,381737,566066,905518,528843,313260,209717,93857,41723,2523,19,320]
+        }]
+    });
+});
+</script>
+</BODY></HTML>
